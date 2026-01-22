@@ -1,0 +1,16 @@
+# Bytecode
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment variables
+.env
+
+
+# OS/editor clutter
+.DS_Store
+Thumbs.db
+.vscode/

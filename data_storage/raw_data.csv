@@ -1,0 +1,19 @@
+Date, Category ,Amount,Description
+2024-01-01,Food,$12.50,Lunch
+2024-01-01, food ,12.50 ,Lunch
+2024-01-02,Transport,$8.00,Bus fare
+,Transport,$8.00,Bus fare
+2024/01/03,RENT,$900,January rent
+2024-01-03,Rent,$-900,January rent
+2024-01-04,Utilities,$120.75,Electric bill
+2024-01-04, utilities ,120.75 ,Electric bill
+2024-01-05,Food,,Groceries
+2024-01-06,Food,$45.30,Dinner
+2024-01-06,FOOD,$45.30,Dinner
+2024-02-01,Rent,$900,February rent
+2024-02-01,RENT,$900,February rent
+2024-02-02,Entertainment,$60.00,Movies
+2024-02-03,Transport,$15.00,Gas
+2024-02-04,Food,$22.10,Coffee + snacks
+2024-13-01,Food,$10.00,Invalid date
+2024-02-05,,35.00,Missing category
