@@ -1,4 +1,4 @@
-# CSV Doctor
+but idk# CSV Doctor
 
 A simple CLI to clean CSV files (standardize column names/values, coerce dates/numbers, drop duplicates) and save a `{file}_cleaned.csv` alongside the input.
 

@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-02-19 10:31:27",
+  "total_rows_in": 63,
+  "total_rows_out": 63,
+  "missing_values_per_column": {
+    "transaction_date": 7,
+    "amount": 13,
+    "category": 1,
+    "description": 3,
+    "vendor": 0,
+    "invoice_id": 1,
+    "notes": 22,
+    "transaction_date_invalid": 0,
+    "amount_invalid": 0
+  },
+  "columns_renamed": {
+    "Transaction Date": "transaction_date",
+    "Amount": "amount",
+    "Category": "category",
+    "Description": "description",
+    "Vendor": "vendor",
+    "Invoice ID": "invoice_id",
+    "Notes": "notes"
+  },
+  "rows_dropped": [],
+  "rows_added": [],
+  "formatting_changes": [
+    "transaction_date: Normalized date separators and converted to datetime (US format)",
+    "amount: Stripped currency symbols, converted to numeric (kept as float)",
+    "category: Standardized to lowercase, whitespace trimmed",
+    "description: Whitespace trimmed (case preserved)",
+    "vendor: Whitespace trimmed (case preserved)",
+    "invoice_id: Whitespace trimmed (case preserved)",
+    "notes: Whitespace trimmed (case preserved)",
+    "Added flag columns: transaction_date_invalid, amount_invalid"
+  ],
+  "output_file_path": "/Users/ari/VScode Projects/csv_doctor/data_storage/client_messy_transactions_cleaned.csv",
+  "invalid_dates_detected": 6,
+  "invalid_date_values": [
+    "2024-01-03T14:22:10",
+    "13-01-2024",
+    "2024-01-11T09:00:00Z",
+    "not a date",
+    "02-30-2024",
+    "2024-02-01T08:15:00"
+  ],
+  "invalid_numeric_detected": 10,
+  "invalid_amount_values": [
+    "(45.67)",
+    "ABC",
+    "$",
+    "12..34",
+    "(1,234.56)",
+    "123.45-",
+    "USD 55.00",
+    "($35.00)",
+    "ten",
+    "03-03-2024"
+  ]
+}

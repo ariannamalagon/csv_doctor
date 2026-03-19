@@ -1,0 +1,52 @@
+Customer ID,Signup Date,Last Purchase Date,Lifetime Value,Email,Phone,State,Notes
+C-001,2024-01-01,01/15/2024,$1,250.00,ALICE@example.com, (555) 123-4567 ,CA,VIP customer
+C-002,01/02/2024,2024-01-20T12:30:00,$0.00,bob@example.com,555.987.6543, ny ,leading/trailing spaces
+C-003,1/3/2024,,500,carol@example.com,,TX,missing last purchase + phone
+C-004,2024/01/04,01-25-2024,$99.9,dave@example.com,5551239999,FL,LV has 1 decimal
+C-005,not a date,01/26/2024,$120.00,ellen@example.com,555-111-2222,WA,invalid signup date
+C-006,01/06/2024,13/01/2024,$75.00,frank@example.com,555-222-3333,NJ,EU-style last purchase (ambiguous)
+C-007,01/07/2024,01/28/2024,$1,000.00,george@example.com,555-333-4444,CA,comma in money (unquoted)
+C-008,01/08/2024,01/29/2024,ABC,henry@example.com,555-444-5555,CA,invalid lifetime value
+C-009,01/09/2024,01/30/2024,"(50.00)",isabel@example.com,555-555-6666,CA,negative in parentheses
+C-010,01/10/2024,01/31/2024,$1,2O0.00,jane@example.com,555-666-7777,CA,letter O in money
+C-011,01/11/2024,02/01/2024,$200.00,kyle@example.com,555-777-8888,OR,
+C-012,01/12/2024,02/02/2024,$,lisa@example.com,555-888-9999,WA,only dollar sign LV
+C-013,01/13/2024,02/03/2024,N/A,matt@example.com,555-000-1111,AZ,LV is N/A
+C-014,01/14/2024,02/04/2024, ,nina@example.com,555-111-0000,CA,blank LV
+C-015,01/15/2024,02/05/2024,1e4,omar@example.com,555-222-0000,CA,scientific LV (10000)
+C-016,01/16/2024,02/06/2024,123.45-,paul@example.com,555-333-0000,CA,trailing minus LV (should flag)
+C-017,01/17/2024,02/07/2024,"$1,234.56",quinn@example.com,555-444-0000,CA,quoted comma money ok
+C-018,01/18/2024,02/08/2024,$1,234.56,rose@example.com,555-555-0000,CA,unquoted comma money may split columns
+C-019,02/30/2024,02/09/2024,$75.00,sam@example.com,555-666-0000,CA,impossible signup date
+C-020,01/20/2024,not a date,$80.00,tina@example.com,555-777-0000,CA,invalid last purchase date
+C-021,01/21/2024,02/11/2024,$90.00,uma@example.com,555-888-0000,CA,
+C-022,01/22/2024,02/12/2024,$100.00,vic@example.com,555-999-0000,CA,
+C-023,01/23/2024,02/13/2024,$110.00,will@example.com,555-101-2020,CA,
+C-024,01/24/2024,02/14/2024,$120.00,xena@example.com,555-202-3030,CA,
+C-025,01/25/2024,02/15/2024,$130.00,yara@example.com,555-303-4040,CA,
+C-026,01/26/2024,02/16/2024,$140.00,zane@example.com,555-404-5050,CA,
+C-027,01/27/2024,02/17/2024,$150.00,amy@example.com,555-505-6060,CA,lowercase name
+C-028,01/28/2024,02/18/2024,$160.00,BEN@example.com,555-606-7070,CA,uppercase email
+C-029,01/29/2024,02/19/2024,$170.00,"cara@example.com",555-707-8080,CA,quoted email
+C-030,01/30/2024,02/20/2024,$180.00,drew@example.com,,CA,missing phone
+C-031,,02/21/2024,$190.00,elle@example.com,555-808-9090,CA,missing signup date
+C-032,02/01/2024,,200.00,ford@example.com,555-909-1010,CA,missing last purchase, LV numeric no $
+C-033,02/02/2024,02/22/2024,200,gabe@example.com,555-111-2222,CA,LV integer no symbols
+C-034,02/03/2024,02/23/2024,$200.0,hana@example.com,555-222-3333,CA,LV one decimal
+C-035,02/04/2024,02/24/2024,"(200)",ivan@example.com,555-333-4444,CA,paren negative without decimals
+C-036,02/05/2024,02/25/2024,$-200.00,jules@example.com,555-444-5555,CA,negative with minus
+C-037,02/06/2024,02/26/2024,USD 200.00,kate@example.com,555-555-6666,CA,currency code should flag
+C-038,02/07/2024,02/27/2024,$200.00,liam@example.com,555-666-7777, ca ,state whitespace
+C-039,02/08/2024,02/28/2024,$200.00,mia@example.com,555-777-8888,CA,duplicate below exact
+C-039,02/08/2024,02/28/2024,$200.00,mia@example.com,555-777-8888,CA,duplicate exact
+C-040,02/09/2024,2024-02-29T23:59:59Z,$250.00,noah@example.com,555-888-9999,CA,timezone Z
+C-041,02/10/2024,02/29/2024,$1,0O0.00,olivia@example.com,555-999-1111,CA,letter O in money
+C-042,02/11/2024,02/30/2024,$300.00,pat@example.com,555-111-3333,CA,impossible last purchase date
+C-043,02/12/2024,02/15/2024,12..34,quincy@example.com,555-222-4444,CA,LV double dot invalid
+C-044,02/13/2024,02/16/2024,$12,34,riley@example.com,555-333-5555,CA,LV comma decimal wrong (unquoted)
+C-045,02/14/2024,02/17/2024,"$12,34",sky@example.com,555-444-6666,CA,LV comma decimal wrong quoted
+C-046,02/15/2024,02/18/2024,$500.00,taylor@example.com,555-555-7777,CA,"Note with, comma inside"
+C-047,02/16/2024,02/19/2024,$600.00,uma2@example.com,555-666-8888,CA,extra customer
+C-048,02/17/2024,not a date,$700.00,vic2@example.com,555-777-9999,CA,invalid last purchase
+C-049,not a date,02/21/2024,$800.00,will2@example.com,555-888-0000,CA,invalid signup
+C-050,02/19/2024,02/22/2024,ten,xena2@example.com,555-999-0001,CA,LV word invalid

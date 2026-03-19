@@ -1,0 +1,64 @@
+transaction_date,amount,category,description,vendor,invoice_id,notes,transaction_date_invalid,amount_invalid
+2024-01-02,1200.0,office supplies,Printer paper,Staples,INV-1001,,False,False
+,89.99,software,ADOBE subscription,Adobe,INV-1002,monthly plan,True,False
+2024-01-04,,meals,team lunch,Chipotle,INV-1003,,False,True
+2024-01-05,0.0,travel,uber ride,Uber,INV-1004,reimbursable,False,False
+,12.34,office supplies,pens and notebooks,Office Depot,INV-1005,missing date,False,False
+2024-01-07,1200.0,office supplies,Printer paper,Staples,INV-1001,duplicate exact below,False,False
+2024-01-07,1200.0,office supplies,Printer paper,Staples,INV-1001,duplicate exact,False,False
+,150.0,travel,Flight to NYC,Delta,INV-1007,EU-style date (ambiguous),True,False
+2024-01-10,-25.0,refund,Returned item,Amazon,INV-1008,negative with minus,False,False
+,19.99,software,Zoom license,Zoom,INV-1009,timezone Z,True,False
+2024-01-12,,office supplies,invalid amount test,Staples,INV-1010,should flag invalid numeric,False,True
+2024-01-14,75.0,,missing category,Amazon,INV-1012,missing category,False,False
+2024-01-15,50.0,meals,,Chipotle,INV-1013,blank description,False,False
+2024-01-16,35.0,meals,team coffee,Starbucks,,missing invoice id,False,False
+,25.0,office supplies,invalid date test,Staples,INV-1014,should flag invalid date,True,False
+2024-01-18,25.0,office supplies,invalid date test,Staples,INV-1014,duplicate invoice id but different date,False,False
+,18.0,office supplies,impossible date,Staples,INV-1015,should flag invalid date,True,False
+2024-01-20,,office supplies,only a dollar sign,Staples,INV-1016,invalid numeric,False,True
+2024-01-21,,office supplies,blank amount,Staples,INV-1017,invalid numeric,False,False
+2024-01-22,,office supplies,na amount,Staples,INV-1018,invalid numeric,False,False
+2024-01-23,,office supplies,double dot amount,Staples,INV-1019,invalid numeric,False,True
+2024-01-25,1234.56,office supplies,quoted thousands amount ok,Staples,INV-1021,,False,False
+2024-01-26,,office supplies,paren + comma amount ok,Staples,INV-1022,,False,True
+2024-01-27,,office supplies,trailing minus amount,Staples,INV-1023,should flag invalid numeric in current normalizer,False,True
+2024-01-28,,software,currency code included,Adobe,INV-1024,should flag invalid numeric,False,True
+2024-01-29,45.0,meals,"Lunch, client meeting",Chipotle,INV-1025,comma in quoted description,False,False
+2024-01-30,60.0,meals,"Dinner, team outing",Olive Garden,INV-1026,,False,False
+2024-01-31,12.0,travel,"Taxi, airport",Lyft,INV-1027,,False,False
+,9.99,software,cloud storage,Dropbox,INV-1028,,True,False
+2024-02-02,100.0,office supplies,USB cables,Amazon,INV-1029,extra spaces in vendor,False,False
+2024-02-03,75.0,office supplies,USB cables,Amazon,INV-1029,near-duplicate (diff whitespace),False,False
+2024-02-04,75.0,office supplies,USB cables,Amazon,INV-1029,exact duplicate below,False,False
+2024-02-04,75.0,office supplies,USB cables,Amazon,INV-1029,exact duplicate,False,False
+2024-02-05,15.0,meals,coffee,Starbucks,INV-1030,contains tab after coffee,False,False
+2024-02-06,49.99,software,Antivirus renewal,Norton,INV-1031,,False,False
+2024-02-07,29.99,software,VPN renewal,Nord,INV-1032,,False,False
+2024-02-08,0.0,refund,Promo credit,Google,INV-1033,,False,False
+2024-02-09,-10.0,refund,Adjustment,Google,INV-1034,,False,False
+2024-02-10,250.0,travel,Conference ticket,Eventbrite,INV-1035,,False,False
+2024-02-11,1500.0,travel,Airbnb stay,Airbnb,INV-1036,unquoted comma in amount splits columns,False,False
+2024-02-12,1500.0,travel,Airbnb stay quoted,Airbnb,INV-1037,,False,False
+2024-02-13,35.0,meals,one decimal,Starbucks,INV-1038,,False,False
+2024-02-14,35.0,meals,leading zero amount,Starbucks,INV-1039,,False,False
+2024-02-15,,meals,paren format with $ inside parens,Starbucks,INV-1040,,False,True
+2024-02-16,35.0,meals,TEAM COFFEE,STARBUCKS,INV-1041,mixed casing,False,False
+2024-02-17,35.0,meals,team coffee,Starbucks,INV-1041,duplicate invoice+amount+desc different casing,False,False
+2024-02-18,1000.0,office supplies,scientific notation amount,Staples,INV-1042,should parse as 1000,False,False
+2024-02-20,20.0,office supplies,,Staples,INV-1044,missing description,False,False
+2024-02-21,20.0,office supplies,,Staples,INV-1044,blank quoted description,False,False
+2024-02-22,0.0,office supplies,zero as number,Staples,INV-1045,,False,False
+2024-02-23,-0.0,office supplies,negative zero,Staples,INV-1046,,False,False
+2024-02-24,-0.01,refund,small negative,Amazon,INV-1047,,False,False
+2024-02-25,,office supplies,word amount,Staples,INV-1048,invalid numeric,False,True
+2024-02-26,1234.0,office supplies,comma decimal wrong,Staples,INV-1049,invalid numeric / may split columns,False,False
+2024-02-27,1234.0,office supplies,quoted comma decimal wrong,Staples,INV-1050,invalid numeric,False,False
+2024-02-28,19.99,software,license renewal,Zoom,INV-1051,,False,False
+2024-02-29,19.99,software,license renewal,Zoom,INV-1051,duplicate exact below,False,False
+2024-02-29,19.99,software,license renewal,Zoom,INV-1051,duplicate exact,False,False
+2024-03-01,,travel,blank amount again,Lyft,INV-1052,invalid numeric,False,False
+2024-03-02,45.67,meals,"Breakfast, bagel",Einstein Bros,INV-1053,,False,False
+2024-03-03,,$55.00,Category shifted right?,OopsVendor,INV-1054,this row is malformed (amount in date column),False,True
+2024-03-04,80.0,office supplies,Monitor stand,Amazon,INV-1055,,False,False
+2024-03-05,80.0,office supplies,Monitor stand,Amazon,INV-1055,duplicate exact,False,False

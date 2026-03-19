@@ -1,0 +1,122 @@
+{
+  "data_quality_issues": [
+    {
+      "row": 3,
+      "column": "transaction_date",
+      "value": "2024-01-03T14:22:10",
+      "issue": "Invalid date format"
+    },
+    {
+      "row": 9,
+      "column": "transaction_date",
+      "value": "13-01-2024",
+      "issue": "Invalid date format"
+    },
+    {
+      "row": 11,
+      "column": "transaction_date",
+      "value": "2024-01-11T09:00:00Z",
+      "issue": "Invalid date format"
+    },
+    {
+      "row": 16,
+      "column": "transaction_date",
+      "value": "not a date",
+      "issue": "Invalid date format"
+    },
+    {
+      "row": 18,
+      "column": "transaction_date",
+      "value": "02-30-2024",
+      "issue": "Invalid date format"
+    },
+    {
+      "row": 30,
+      "column": "transaction_date",
+      "value": "2024-02-01T08:15:00",
+      "issue": "Invalid date format"
+    },
+    {
+      "row": 4,
+      "column": "amount",
+      "value": "(45.67)",
+      "issue": "Invalid numeric format"
+    },
+    {
+      "row": 12,
+      "column": "amount",
+      "value": "ABC",
+      "issue": "Invalid numeric format"
+    },
+    {
+      "row": 19,
+      "column": "amount",
+      "value": "$",
+      "issue": "Invalid numeric format"
+    },
+    {
+      "row": 22,
+      "column": "amount",
+      "value": "12..34",
+      "issue": "Invalid numeric format"
+    },
+    {
+      "row": 24,
+      "column": "amount",
+      "value": "(1,234.56)",
+      "issue": "Invalid numeric format"
+    },
+    {
+      "row": 25,
+      "column": "amount",
+      "value": "123.45-",
+      "issue": "Invalid numeric format"
+    },
+    {
+      "row": 26,
+      "column": "amount",
+      "value": "USD 55.00",
+      "issue": "Invalid numeric format"
+    },
+    {
+      "row": 45,
+      "column": "amount",
+      "value": "($35.00)",
+      "issue": "Invalid numeric format"
+    },
+    {
+      "row": 54,
+      "column": "amount",
+      "value": "ten",
+      "issue": "Invalid numeric format"
+    },
+    {
+      "row": 62,
+      "column": "amount",
+      "value": "03-03-2024",
+      "issue": "Invalid numeric format"
+    }
+  ],
+  "skipped_rows": [
+    {
+      "content": "['2024/01/08', '$1', '234.5', 'travel', 'Hotel stay', 'Hilton', 'INV-1006', 'amount has 1 decimal']",
+      "issue": "Malformed row - field count mismatch"
+    },
+    {
+      "content": "['01/13/2024', '$1', '2O0.00', 'Office Supplies', 'looks like 1200 but has letter O', 'Staples', 'INV-1011', 'should flag invalid numeric']",
+      "issue": "Malformed row - field count mismatch"
+    },
+    {
+      "content": "['01/24/2024', '1', '234.56', 'Office Supplies', 'unquoted thousands separator splits columns', 'Staples', 'INV-1020', 'should load weird if not quoted']",
+      "issue": "Malformed row - field count mismatch"
+    },
+    {
+      "content": "['02/19/2024', '$1', '0O0.00', 'Office Supplies', 'another letter O numeric', 'Staples', 'INV-1043', 'invalid numeric']",
+      "issue": "Malformed row - field count mismatch"
+    },
+    {
+      "content": "['03/06/2024', '2024-03-06', '$25.00', 'Meals', 'Date looks like ISO in amount col', 'Chipotle', 'INV-1056', 'malformed row']",
+      "issue": "Malformed row - field count mismatch"
+    }
+  ]
+}
